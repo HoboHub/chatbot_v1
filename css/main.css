@@ -1,0 +1,211 @@
+body {
+  background-color: lightgrey;
+  font-size: 12px;
+  font-family: "OpenSans", sans-serif; }
+
+h1 {
+  font-size: 11px;
+  padding: 0;
+  margin: 0; }
+
+.chatbox {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  background-color: #fff;
+  width: 260px;
+  height: 330px;
+  border-radius: 10px; }
+  .chatbox .chat-title {
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #616FEE;
+    text-align: left;
+    font-family: "OpenSansLight";
+    color: #fff;
+    word-spacing: 1px;
+    min-height: 25px; }
+    .chatbox .chat-title:before {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 50px;
+      background-color: #FE4EB2; }
+    .chatbox .chat-title:hover:before {
+      background-color: #ff0292;
+      cursor: pointer; }
+    .chatbox .chat-title:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 5px;
+      top: 8px;
+      width: 8px;
+      height: 1px;
+      background-color: #fff; }
+    .chatbox .chat-title h1 {
+      margin-top: 5px; }
+
+.avatar {
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  float: left;
+  background-color: #fff;
+  margin: 0;
+  margin-right: 10px;
+  border: 2px solid #6192ee;
+  overflow: hidden; }
+  .avatar img {
+    width: 150%;
+    position: relative;
+    right: 6px;
+    bottom: 2px; }
+
+.chatbox .messages {
+  background-color: #fff;
+  padding: 10px;
+  flex: 1 1 auto; }
+  .chatbox .messages .messages-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 74%;
+    width: 100%;
+    top: 45px; }
+
+.message {
+  clear: both;
+  float: left;
+  padding: 7px 10px 8px;
+  border-radius: 10px 10px 10px 0px;
+  background: #616FEE;
+  margin: 8px 0px;
+  line-height: 1.4;
+  max-width: 60%;
+  margin-left: 35px;
+  position: relative;
+  color: #fff; }
+  .message .avatar {
+    position: absolute;
+    left: -35px; }
+
+.message-personal {
+  float: right;
+  color: #fff;
+  background: #7ECBFF;
+  text-align: left;
+  border-radius: 10px 10px 0 10px; }
+  .message-personal:last-child {
+    margin-bottom: 30px; }
+
+.chatbox .message-box {
+  position: absolute;
+  bottom: 0px;
+  width: 92.2%;
+  height: 40px;
+  border-radius: 0px 0px 10px 10px;
+  background-color: #fff;
+  opacity: 0.8;
+  padding: 0px 10px; }
+  .chatbox .message-box .message-input {
+    width: 80%;
+    height: 15px;
+    resize: none;
+    background-color: transparent;
+    border: none;
+    color: grey;
+    outline: none;
+    overflow: hidden;
+    padding: 10px 0px;
+    font-family: "OpenSansLight";
+    font-size: 12px; }
+  .chatbox .message-box ::placeholder {
+    color: grey; }
+
+.chatbox .message-box .message-submit {
+  float: right;
+  padding: 0px;
+  margin-top: 10px;
+  background-color: lightgrey;
+  border-radius: 10px;
+  border: none;
+  padding: 4px 8px;
+  color: #fff;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 10px;
+  transition-duration: 0.2s;
+  cursor: pointer; }
+  .chatbox .message-box .message-submit:hover {
+    background-color: #ff0292; }
+
+.timestamp {
+  position: absolute;
+  bottom: -15px;
+  color: #4F5A6E; }
+
+.messages-content {
+  overflow: hidden; }
+  .messages-content .chat-container {
+    position: relative;
+    width: 92%;
+    height: 100%;
+    padding: 10px; }
+
+.new {
+  transform: scale(0);
+  transform-origin: 0 0;
+  animation: bounce 500ms linear both; }
+
+.loading::before {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  margin-top: 4px;
+  animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+  border: none;
+  animation-delay: 0.15s; }
+.loading span {
+  display: block;
+  font-size: 0;
+  width: 20px;
+  height: 10px;
+  position: relative;
+  margin-left: 10px; }
+  .loading span::before {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 2;
+    margin-top: 4px;
+    animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+    margin-left: -5px;
+    margin-top: -3px; }
+  .loading span::after {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 2;
+    margin-top: 4px;
+    animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+    margin-left: 0px;
+    margin-top: -3px;
+    animation-delay: 0.3s; }
+
+/*# sourceMappingURL=main.css.map */

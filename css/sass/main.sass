@@ -1,0 +1,235 @@
+@mixin ball 
+	content: ''
+	display: block
+	width: 3px
+	height: 3px
+	border-radius: 50%
+	background: rgba(255, 255, 255, .5)
+	z-index: 2
+	margin-top: 4px
+	animation: ball .45s cubic-bezier(0, 0, 0.15, 1) alternate infinite
+
+
+body
+	background-color: lightgrey
+	font-size: 12px
+	font-family: "OpenSans", sans-serif
+
+h1
+	font-size: 11px
+	padding: 0
+	margin: 0
+
+.chatbox
+	position: absolute
+	right: 30px
+	bottom: 30px
+	background-color: #fff
+	width: 260px
+	height: 330px
+	border-radius: 10px
+	.chat-title
+		padding: 10px
+		border-radius: 10px 10px 0px 0px
+		background-color: #616FEE
+		text-align: left
+		font-family: "OpenSansLight"
+		color: #fff
+		word-spacing: 1px
+		min-height: 25px
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			right: 0
+			top: 0
+			background-color: lightblue
+			width: 20px
+			height: 20px
+			border-top-right-radius: 10px
+			border-bottom-left-radius: 50px
+			background-color: #FE4EB2
+		&:hover:before
+			background-color: #ff0292
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			right: 5px
+			top: 8px
+			width: 8px
+			height: 1px
+			background-color: #fff
+		h1
+			margin-top: 5px
+
+.avatar
+	width: 25px
+	height: 25px
+	border-radius: 50px
+	float: left
+	background-color: #fff
+	margin: 0
+	margin-right: 10px
+	border: 2px solid #6192ee
+	overflow: hidden
+	img
+		width: 150%
+		position: relative 
+		right: 6px
+		bottom: 2px
+
+.chatbox
+	.messages
+		background-color: #fff
+		padding: 10px
+		flex: 1 1 auto
+		.messages-content
+			position: absolute
+			top: 0
+			left: 0
+			height: 74%
+			width: 100%
+			top: 45px
+
+
+.message
+	clear: both
+	float: left
+	padding: 7px 10px 8px
+	border-radius: 10px 10px 10px 0px
+	background: #616FEE
+	margin: 8px 0px
+	line-height: 1.4
+	max-width: 60%
+	margin-left: 35px
+	position: relative
+	color: #fff
+	//text-shadow
+	.avatar
+		position: absolute
+		left: -35px
+
+
+.message-personal
+	float: right
+	color: #fff
+	background: #7ECBFF
+	text-align: left
+	border-radius: 10px 10px 0 10px
+	&:last-child
+		margin-bottom: 30px
+
+
+
+
+.chatbox
+	.message-box
+		position: absolute
+		bottom: 0px
+		width: 92.2%
+		height: 40px
+		border-radius: 0px 0px 10px 10px
+		background-color: #616FEE
+		opacity: .8 //под вопросом
+		padding: 0px 10px
+		.message-input
+			width: 80%
+			height: 15px
+			resize: none
+			background-color: transparent
+			border: none
+			color: #fff
+			outline: none
+			overflow: hidden
+			//line-height: 2.6
+			padding: 10px 0px
+			font-family: "OpenSansLight"
+			font-size: 12px
+		::placeholder
+			color: #fff
+
+
+.chatbox
+	.message-box
+		.message-submit
+			float: right
+			padding: 0px
+			margin-top: 10px
+			background-color: #FE4EB2
+			border-radius: 10px
+			border: none
+			padding: 4px 8px
+			color: #fff
+			outline: none
+			text-transform: uppercase
+			font-size: 10px
+			transition-duration: .2s
+			cursor: pointer
+			&:hover
+				background-color: #ff0292
+
+
+/////////////////////////////////
+
+
+// .mCSB_scrollTools
+// 	margin: 1px -3px 1px 0
+// 	opacity: 0
+
+// .mCSB_inside > .mCSB_container
+// 	margin-right: 0px
+// 	padding: 0 10px
+
+// .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+// 	background-color: rgba(0, 0, 0, 0.5) !important
+
+
+.timestamp
+	position: absolute
+	bottom: -15px
+	color: #4F5A6E
+
+
+.messages-content
+	overflow: hidden
+	.chat-container
+		position: relative
+		width: 92% //100%
+		height: 100%
+		padding: 10px
+
+
+.new
+	transform: scale(0)
+	transform-origin: 0 0
+	animation: bounce 500ms linear both
+
+
+.loading 
+	&::before
+		@include ball
+		border: none
+		animation-delay: .15s
+	span
+		display: block
+		font-size: 0
+		width: 20px
+		height: 10px
+		position: relative
+		margin-left: 10px
+		&::before
+			@include ball
+			margin-left: -5px
+			margin-top: -3px
+		&::after
+			@include ball
+			margin-left: 0px
+			margin-top: -3px
+			animation-delay: .3s
+
+
+
+
+
+
